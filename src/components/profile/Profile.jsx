@@ -1,11 +1,11 @@
 import userData from '../../data/user.json';
 import ProfileStats from '../profileStats/profileStats';
 import ProfileDescription from '../profileDescription/ProfileDescription';
-import './profileStyle.css';
+import s from './profileStyle.module.css';
 const Profile = () => {
   const { username, tag, location, avatar, stats } = userData;
   return (
-    <div className="profile">
+    <div className={s.profile}>
       <ProfileDescription
         username={username}
         tag={tag}

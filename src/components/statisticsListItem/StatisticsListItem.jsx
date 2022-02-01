@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types';
-import './statisticsListItemStyle.css';
+import s from './statisticsListItemStyle.module.css';
 const StatisticsListItem = ({ label, percentage }) => {
   return (
-    <li className="item">
-      <span className="label">{label}</span>
-      <span className="percentage">{percentage}</span>
+    <li
+      className={s.item}
+      style={{
+        backgroundColor: `#${Math.floor(Math.random() * 16777215).toString(
+          16,
+        )}`,
+      }}
+    >
+      <span className={s.label}>{label}</span>
+      <span className={s.percentage}>{percentage}</span>
     </li>
   );
 };
