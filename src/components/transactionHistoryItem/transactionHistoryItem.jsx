@@ -1,10 +1,7 @@
 import './transactionHistoryItemStyle.css';
+import PropTypes from 'prop-types';
 const TransactionHistoryItem = props => {
-  console.log(props);
-  const {
-    transactionHistory: { type, amount, currency },
-  } = props;
-  console.log(type);
+  const { type, amount, currency } = props;
   return (
     <tbody>
       <tr>
@@ -17,3 +14,9 @@ const TransactionHistoryItem = props => {
 };
 
 export default TransactionHistoryItem;
+
+TransactionHistoryItem.propTypes = {
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.string.isRequired,
+  currency: PropTypes.string.isRequired,
+};

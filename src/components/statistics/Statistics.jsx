@@ -7,12 +7,12 @@ const Statistics = () => {
     <section className="statistics">
       <h2 className="title">Upload stats</h2>
       <ul className="stat-list">
-        {data.map(el => {
+        {data.map(({ id, label, percentage }) => {
           return (
             <StatisticsListItem
-              key={el.id}
-              label={el.label}
-              percentage={el.percentage}
+              key={id}
+              label={label}
+              percentage={percentage}
             />
           );
         })}

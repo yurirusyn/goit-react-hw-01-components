@@ -12,10 +12,8 @@ const TransactionHistory = () => {
           <th>Currency</th>
         </tr>
       </thead>
-      {transactions.map(item => {
-        return (
-          <TransactionHistoryItem key={item.id} transactionHistory={item} />
-        );
+      {transactions.map(({ id, ...item }) => {
+        return <TransactionHistoryItem key={id} {...item} />;
       })}
     </table>
   );

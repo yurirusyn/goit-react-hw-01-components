@@ -2,9 +2,7 @@ import './friendListItem.css';
 import PropTypes from 'prop-types';
 
 const FriendListItem = props => {
-  const {
-    friends: { avatar, name, isOnline },
-  } = props;
+  const { avatar, name, isOnline } = props;
   return (
     <li className="item">
       <span className="status">{isOnline}</span>
@@ -17,11 +15,7 @@ const FriendListItem = props => {
 export default FriendListItem;
 
 FriendListItem.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
 };
-
-// FriendListItem.defaultProps = {
-//   name: 0,
-// };

@@ -12,7 +12,7 @@ const Profile = () => {
         location={location}
         avatar={avatar}
       />
-      <ProfileStats stats={stats} />
+      <ProfileStats {...stats} />
     </div>
   );
 };
