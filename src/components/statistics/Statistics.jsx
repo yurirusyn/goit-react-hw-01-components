@@ -1,11 +1,11 @@
 import s from './statisticsStyle.module.css';
-import data from '../../data/data.json';
 import StatisticsListItem from '../statisticsListItem/StatisticsListItem';
+import PropTypes from 'prop-types';
 
-const Statistics = () => {
+const Statistics = ({ data, title }) => {
   return (
     <section className={s.statistics}>
-      <h2 className={s.title}>Upload stats</h2>
+      {title && <h2 className={s.title}>{title}</h2>}
       <ul className={s.statList}>
         {data.map(({ id, label, percentage }) => {
           return (
@@ -22,3 +22,8 @@ const Statistics = () => {
 };
 
 export default Statistics;
+
+Statistics.propTypes = {
+  data: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+};
